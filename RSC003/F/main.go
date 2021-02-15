@@ -12,11 +12,24 @@ const Mod = 1000000007
 
 var sc = bufio.NewScanner(os.Stdin)
 
+func Solve(n int) int {
+	c := make([]int, n)
+	for i := 0; i < n; i++ {
+		c[i] = nextInt()
+	}
+	dp := make([]int, n)
+	dp[0] = 1
+
+	return dp[n]
+}
+
 func main() {
 	buf := make([]byte, 1024*1024)
 	sc.Buffer(buf, bufio.MaxScanTokenSize)
 	sc.Split(bufio.ScanWords)
 
+	n := nextInt()
+	fmt.Println(Solve(n))
 }
 
 func nextInt() int {
